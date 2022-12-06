@@ -15,4 +15,11 @@ public class Queue<E> {
     public boolean isEmpty(){
         return (last == null);
     }
+
+    void enqueue(E element){
+        QueueNode<E> f = first;
+        first = new QueueNode<E>(element);
+        f.setParent(first);
+        size++;
+    }
 }
