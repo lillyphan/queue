@@ -10,4 +10,9 @@ public class Queue<E> {
     public int size(){
         return size;
     }
+
+    //returns true if stack is empty
+    public boolean isEmpty(){
+        return (last == null);
+    }
 }
