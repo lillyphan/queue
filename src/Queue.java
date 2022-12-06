@@ -43,14 +43,19 @@ public class Queue<E> {
         }
     }
 
+@Override
     public String toString(){
-        QueueNode<E> node = last;
-        String s = "Queue: ";
-        while (node.getParent() != null){
-            s = s + node.getData() + " ";
-            node = node.getParent();
+        if (!isEmpty()) {
+            QueueNode<E> node = last;
+            String s = "Queue: ";
+            while (node.getParent() != null) {
+                s = s + node.getData() + " ";
+                node = node.getParent();
+            }
+            s = s + node.getData();
+            return s;
+        } else {
+            return "empty";
         }
-        s = s + node.getData();
-        return s;
     }
 }
