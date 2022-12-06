@@ -16,14 +16,14 @@ public class Queue<E> {
         return (last == null);
     }
 
-    void enqueue(E element){
+    public void enqueue(E element){
         QueueNode<E> f = first;
         first = new QueueNode<E>(element);
         f.setParent(first);
         size++;
     }
 
-    E dequeue(){
+    public E dequeue(){
         if (!isEmpty()){
             QueueNode<E> l = last;
             last = l.getParent();
@@ -32,6 +32,14 @@ public class Queue<E> {
             return l.getData();
         } else {
             return null;
+        }
+    }
+
+    public E peek(){
+        if (isEmpty()){
+            return null;
+        } else {
+            return last.getData();
         }
     }
 }
