@@ -22,4 +22,16 @@ public class Queue<E> {
         f.setParent(first);
         size++;
     }
+
+    E dequeue(){
+        if (!isEmpty()){
+            QueueNode<E> l = last;
+            last = l.getParent();
+            l.setParent(null);
+            size--;
+            return l.getData();
+        } else {
+            return null;
+        }
+    }
 }
