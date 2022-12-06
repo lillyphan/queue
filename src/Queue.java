@@ -42,4 +42,15 @@ public class Queue<E> {
             return last.getData();
         }
     }
+
+    public String toString(){
+        QueueNode<E> node = last;
+        String s = "Queue: ";
+        while (node.getParent() != null){
+            s = s + node.getData() + " ";
+            node = node.getParent();
+        }
+        s = s + node.getData();
+        return s;
+    }
 }
