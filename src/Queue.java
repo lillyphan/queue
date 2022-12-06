@@ -5,4 +5,9 @@ public class Queue<E> {
 
     //empty constructor
     public Queue(){}
+
+    //returns instance data size
+    public int size(){
+        return size;
+    }
 }
