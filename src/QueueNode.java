@@ -1,3 +1,10 @@
+/**
+ * QueueNode
+ * Author: Lilly Phan
+ * Date: 12/07/2021
+ * QueueNode acts as the basic data unit of Queue
+ **/
+
 public class QueueNode<E> {
     private QueueNode<E> parent;
     private E data;

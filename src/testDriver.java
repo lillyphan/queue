@@ -1,5 +1,45 @@
+/**
+ * testDriver
+ * Author: Lilly Phan
+ * Date: 12/07/2021
+ * testDriver tests all methods from QueueNode and Queue
+ **/
+
 public class testDriver {
     public static void main(String[] args) {
+        //testing constructors
+        QueueNode<Integer> n = new QueueNode<>();
+        QueueNode<Integer> n1 = new QueueNode<>(2);
+        QueueNode<Integer> n2 = new QueueNode<>(1, n1);
+
+        //testing getData
+        System.out.println("null: " + n.getData());
+        System.out.println("2: " + n1.getData());
+
+        //testing getParent
+        System.out.println("null: " + n.getParent());
+        System.out.println("2: " + n2.getParent().getData());
+
+        //testing setData
+        n.setData(100);
+        n1.setData(200);
+        n2.setData(300);
+
+        System.out.println("100: " + n.getData());
+        System.out.println("200: " + n1.getData());
+        System.out.println("300: " + n2.getData());
+
+        //testing setParent
+        n1.setParent(n);
+        System.out.println("100: " + n1.getParent().getData());
+
+        //testing toString
+        System.out.println("QueueNode: 200: " + n1);
+
+        //testing equals
+        n2.setData(200);
+        System.out.println("true: " + n1.equals(n2));
+
         //testing constructors
         Queue<Integer> q = new Queue<>();
         Queue<Integer> q1 = new Queue<>();
