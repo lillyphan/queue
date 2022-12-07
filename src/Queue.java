@@ -31,7 +31,7 @@ public class Queue<E> {
     public E dequeue(){
         if (!isEmpty()){
             QueueNode<E> f = first;
-            last = f.getParent();
+            first = f.getParent();
             f.setParent(null);
             size--;
             return f.getData();

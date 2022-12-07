@@ -25,11 +25,18 @@ public class testDriver {
         System.out.println("empty: " + q1);
 
         //testing dequeue
-        q1.dequeue();
+        System.out.println("null: " + q1.dequeue());
         q2.dequeue();
         q.dequeue();
 
         System.out.println("Queue: 1 2: " + q2);
         System.out.println("empty: " + q);
+
+        //testing peek
+        q.enqueue(69);
+
+        System.out.println("69: " + q.peek());
+        System.out.println("null: " + q1.peek());
+        System.out.println("1: " + q2.peek());
     }
 }
