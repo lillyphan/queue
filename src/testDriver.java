@@ -15,5 +15,21 @@ public class testDriver {
         System.out.println("1: " + q.size());
         System.out.println("0: " + q1.size());
         System.out.println("3: " + q2.size());
+
+        //testing isEmpty
+        System.out.println("true: " + q1.isEmpty());
+        System.out.println("false: " + q.isEmpty());
+
+        //testing toString
+        System.out.println("Queue: 0 1 2: " + q2);
+        System.out.println("empty: " + q1);
+
+        //testing dequeue
+        q1.dequeue();
+        q2.dequeue();
+        q.dequeue();
+
+        System.out.println("Queue: 1 2: " + q2);
+        System.out.println("empty: " + q);
     }
 }

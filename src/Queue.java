@@ -51,10 +51,10 @@ public class Queue<E> {
 @Override
     public String toString(){
         if (!isEmpty()) {
-            QueueNode<E> node = last;
+            QueueNode<E> node = first;
             String s = "Queue: ";
             while (node.getParent() != null) {
-                s = s + node.getData() + " ";
+                s = s.concat(node.getData() + " ");
                 node = node.getParent();
             }
             s = s + node.getData();
