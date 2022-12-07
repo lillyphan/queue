@@ -13,23 +13,28 @@ public class Queue<E> {
 
     //returns true if stack is empty
     public boolean isEmpty(){
-        return (last == null);
+        return (first == null);
     }
 
     public void enqueue(E element){
-        QueueNode<E> f = first;
-        first = new QueueNode<E>(element);
-        f.setParent(first);
+        if (!isEmpty()) {
+            QueueNode<E> l = last;
+            last = new QueueNode<E>(element);
+            l.setParent(last);
+        } else {
+            first = new QueueNode<E>(element);
+            last = first;
+        }
         size++;
     }
 
     public E dequeue(){
         if (!isEmpty()){
-            QueueNode<E> l = last;
-            last = l.getParent();
-            l.setParent(null);
+            QueueNode<E> f = first;
+            last = f.getParent();
+            f.setParent(null);
             size--;
-            return l.getData();
+            return f.getData();
         } else {
             return null;
         }
@@ -39,7 +44,7 @@ public class Queue<E> {
         if (isEmpty()){
             return null;
         } else {
-            return last.getData();
+            return first.getData();
         }
     }
 
